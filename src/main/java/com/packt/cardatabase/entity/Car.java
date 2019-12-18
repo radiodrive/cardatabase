@@ -14,10 +14,12 @@ public class Car {
     @Column(name="desc",nullable=false, length=512)
     private String description;
 
-    public Car(){}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner")
+    private Owner owner;
 
-
-    public Car(String brand, String model, String color, String registerNumber, int year, int price, String description) {
+    public Car(String brand, String model, String color, String registerNumber, int year, int price, String description, Owner owner) {
+        super();
         this.brand = brand;
         this.model = model;
         this.color = color;
@@ -25,6 +27,16 @@ public class Car {
         this.year = year;
         this.price = price;
         this.description = description;
+        this.owner = owner;
+
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 
     public String getBrand() {
