@@ -2,10 +2,12 @@ package com.packt.cardatabase.domain;
 
 import com.packt.cardatabase.entity.Car;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
 import java.util.Optional;
 
+@RepositoryRestResource
 public interface CarRepository extends CrudRepository <Car, Long> {
 
 
