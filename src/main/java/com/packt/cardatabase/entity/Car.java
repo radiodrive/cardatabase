@@ -18,6 +18,9 @@ public class Car {
     @JoinColumn(name = "owner")
     private Owner owner;
 
+    public Car() {
+    }
+
     public Car(String brand, String model, String color, String registerNumber, int year, int price, String description, Owner owner) {
         super();
         this.brand = brand;
