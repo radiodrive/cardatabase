@@ -1,6 +1,7 @@
+
 package com.packt.cardatabase;
 
-import com.packt.cardatabase.service.UserDetailsServiceImpl;
+/*import com.packt.cardatabase.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,4 +28,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService)
                 .passwordEncoder(new BCryptPasswordEncoder());
     }
-}
+}*/
+

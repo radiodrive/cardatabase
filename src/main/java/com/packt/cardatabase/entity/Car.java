@@ -1,13 +1,16 @@
 package com.packt.cardatabase.entity;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.*;
 
-@Entity
+@Document(collection = "cars")
 public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private ObjectId id;
     private String brand,model,color,registerNumber;
     private int year,price;
 

@@ -1,14 +1,17 @@
 package com.packt.cardatabase.entity;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.*;
 
-@Entity
+@Document(collection = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable =false,updatable = false)
-    private long id;
+    private ObjectId id;
 
     @Column(nullable = false,unique = true)
     private String username;
@@ -28,13 +31,6 @@ public class User {
         this.role = role;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;

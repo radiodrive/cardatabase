@@ -1,14 +1,14 @@
 package com.packt.cardatabase.domain;
 
 import com.packt.cardatabase.entity.Car;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 @RepositoryRestResource
-public interface CarRepository extends CrudRepository <Car, Long> {
+public interface CarRepository extends MongoRepository <Car, String> {
 
 
     List<Car> findByBrandAndModel(String brand,String model);
@@ -17,10 +17,10 @@ public interface CarRepository extends CrudRepository <Car, Long> {
     long count();
 
     @Override
-    Iterable<Car> findAll();
+    List<Car> findAll();
 
     @Override
-    Optional<Car> findById(Long aLong);
+    Optional<Car> findById(String aString);
 
     @Override
     void delete(Car car);
@@ -29,5 +29,5 @@ public interface CarRepository extends CrudRepository <Car, Long> {
     void deleteAll();
 
     @Override
-    <S extends Car> Iterable<S> saveAll(Iterable<S> iterable);
+    <S extends Car> List<S> saveAll(Iterable<S> iterable);
 }

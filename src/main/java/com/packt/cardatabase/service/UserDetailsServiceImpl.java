@@ -1,5 +1,5 @@
 package com.packt.cardatabase.service;
-
+/*
 import com.packt.cardatabase.domain.UserRepository;
 import com.packt.cardatabase.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,3 +28,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
 }
+*/
+

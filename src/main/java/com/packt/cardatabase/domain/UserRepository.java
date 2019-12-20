@@ -1,11 +1,11 @@
 package com.packt.cardatabase.domain;
 
 import com.packt.cardatabase.entity.User;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-@Repository
-public interface UserRepository extends CrudRepository<User, Long> {
+
+
+public interface UserRepository extends MongoRepository<User, Long> {
 
     User findByUsername(String username);
 }

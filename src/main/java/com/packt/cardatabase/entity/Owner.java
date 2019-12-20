@@ -1,15 +1,17 @@
 package com.packt.cardatabase.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Document(collection = "owners")
 public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long ownerid;
+    private ObjectId ownerid;
     private String firstname,lastname;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "owner")
